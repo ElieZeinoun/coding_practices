@@ -1,6 +1,60 @@
-h2 h3 h4{
-    color: red;
-    margin:0;
-    padding: 0;
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+    margin:0px;
+    padding:0px;
+    border:0px;
 
 }
+
+section{
+
+    display:flexbox;
+}
+.english {
+    float: left;
+    background-color:rgb(240, 240, 240);
+    width:44%;
+    height:100vh;
+    padding:25px;
+    margin-right:1%;
+}
+
+.portuguese {
+    float: left;
+    background-color:rgb(211, 211, 211);
+    width:49%;
+    height:100vh;
+    padding:25px;
+
+}
+
+
+header{
+    background-color:black;
+    height:auto;
+    width:100vw;
+    padding:5px;
+
+}
+
+h1 {
+    color:whitesmoke;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+
+h2{
+    color: black;
+}
+
+p{
+    line-height: 1em;
+    text-decoration: none;
+    text-transform: capitalize;
+    text-transform: uppercase;
+    text-transform: lowercase;
+    font-weight: 200;
+}
+
