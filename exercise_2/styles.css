@@ -7,9 +7,9 @@ body{
 }
 
 section{
-
     display:flexbox;
 }
+
 .english {
     float: left;
     background-color:rgb(240, 240, 240);
