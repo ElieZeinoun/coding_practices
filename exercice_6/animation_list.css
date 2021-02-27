@@ -1,0 +1,46 @@
+.test{
+    transform: scale(0.7, 1.5) rotate (30deg) skewY(15deg) translate(200px);
+    transform-origin: bottom-left;
+}
+
+div {
+background: url('//website/images/overview.jpg') 
+no-repeat
+
+}
+
+.button{
+    color: white;
+    background-color: rgb(28, 40, 126);
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    transition-delay: 0.2s;
+}
+
+.button:hover{
+    background-color:  tomato;
+}
+
+@keyframes colors{
+    0%{
+        background-color: blue;
+    }
+    50%{
+        background-color: yellow;
+    }
+    100%{
+        background-color: green;
+    }
+}
+
+.square{
+    animation-name: bounceIn;
+    animation-duration: 3.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 3;
+    animation-direction: normal;
+    animation-play-state: running;
+    animation-fill-mode: none;
+}

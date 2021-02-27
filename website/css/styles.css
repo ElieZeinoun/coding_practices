@@ -1,0 +1,57 @@
+html body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+
+header{
+    text-transform: uppercase;
+}
+
+ul{
+    padding: 0;
+}
+
+li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: grey;
+    
+}
+
+.navbar{
+    font-weight: 700;
+    color: gray;
+}
+
+.center{
+    text-align: center;
+}
+
+.title{
+    color:tomato;
+    letter-spacing: .5em;
+}
+
+/* .article{
+    width:90vw;
+} */
+
+figure{
+    margin:0;
+    padding:0;
+}
+.mainimg{
+    width: 100vw;
+    margin:0;
+    padding:0;
+}
