@@ -11,11 +11,11 @@ header{
     text-transform: uppercase;
 }
 
-ul{
+.navbar{
     padding: 0;
 }
 
-li{
+.navbar li{
     list-style-type: none;
     display: inline-block;
     margin: 0;
@@ -54,4 +54,72 @@ figure{
     width: 100vw;
     margin:0;
     padding:0;
+    max-width: 100%;
+}
+
+
+.about_fig{
+    width: 50%;
+    margin:0;
+    padding: 0;
+}
+
+.about{
+    width: 50vw;
+    margin:0;
+    padding:0;
+}
+
+.date{
+    color: rgb(80, 80, 80);
+    letter-spacing: 5px;
+}
+.title{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+figcaption{
+    color:rgb(32, 32, 32);
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.loremipsum{
+    color:rgb(49, 49, 49);
+    letter-spacing: 2px;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.aboutus{
+    color:rgb(32, 32, 32);
+    letter-spacing: 3px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.regular_list li a{
+    color: rgb(56, 56, 73);
+    weight:800;
+}
+footer{
+    background-color: rgb(245, 244, 244);
+    padding: 20px 0px;
+    margin:0;
+}
+footer li{
+    list-style-type: none;
+    text-align: center;
+}
+footer li a{
+    text-transform: uppercase;
+    color: rgb(46, 46, 46);
+    font-weight: 600;
+    font-size: 1.25em;
+}
+
+#copyright{
+    font-size:1.1em;
+    font-weight:400;
 }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Monument</title>
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles_flexbox.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;1,200&display=swap" rel="stylesheet">
 </head>
@@ -12,22 +12,42 @@
     <header>
         <nav class="center">
             <ul class="navbar">
+                <li></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Blog</a></li>
                 <li><a href="#">Contact</a></li>
+                <li></li>
             </ul>
         </nav>
-        <h1 class="center title">Monument</h1>
     </header>
-    <article class="container">
-        <h4 class="date">11/23/2016</h4>
-        <h2 class="title">A Visual Guide to the Southwest</h2>
-        <figure>
-            <img class="mainimg" src="images/overview.jpg" alt="axonometric">
-            <figcaption>This is the overview drawing that represents the major components of the project.</figcaption>
-            <h5 class="loremipsum">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</h5>
-        </figure>
+    <figure class="cover">
+        <img class="mainimg" src="images/overview.jpg" alt="axonometric">
+        <h1 class="titletext">Cover Image</h1>
+    </figure>
+    <article class="flex_container">   
+        <div>
+            <h4 class="date">11/23/2016</h4>
+            <h2 class="title">A Visual Guide to the Southwest</h2>
+            <figure>
+                <img class="mainimg" src="images/axo.jpg" alt="axonometric">
+                <figcaption>This is the overview drawing that represents the major components of the project.</figcaption>
+                <h5 class="loremipsum">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</h5>
+            </figure>
+         </div>  
+        <div>
+            <h4 class="date">11/23/2016</h4>
+            <h2 class="title">A Visual Guide to the Southwest</h2>
+            <figure>
+                <img class="mainimg" src="images/sections.jpg" alt="section">
+                <figcaption>This is the overview drawing that represents the major components of the project.</figcaption>
+                <h5 class="loremipsum">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.</h5>
+            </figure>
+        </div>
+
+    </article>
+    <!-- <article class="container">
+ 
         <figure>
             <img class="mainimg" src="images/sections.jpg" alt="section">
             <figcaption>This is the overview drawing that represents the major components of the project.</figcaption>
@@ -46,7 +66,7 @@
             <li><a href="#">Issue Sixteen — Friends </a></li>
             <li><a href="#">Issue Fifteen — Carnivals </a></li>
             <li><a href="#">Issue Fourteen  — Gatherings </a></li>
-        </ul>
+        </ul> -->
     </article>
     <footer>
         <li><a href="#">Facebook </a> <a href="#">Twitter </a><a href="#">Instagram </a></li>
