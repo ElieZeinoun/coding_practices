@@ -1,0 +1,167 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    z-index: 10;
+    padding: 15px;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.navbar li{
+    list-style-type: none;
+    padding: 15px;
+}
+
+.navbar li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(48, 48, 48);
+    font-weight: 500;
+    text-align: center;
+}
+
+.cover{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.cover img{
+    height:900px;
+    object-fit: cover;
+    width: 100%;
+}
+
+figcaption{
+    position: absolute;
+    color: rgb(27, 27, 27);
+    background-color: whitesmoke;
+    border-radius: 10px;
+    padding: 7px;
+    opacity: 75%;
+    font-weight: 500;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.main_info{
+    padding: 10px 0px 10px 0px;
+    color:rgb(27, 27, 27);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    position: relative;
+    padding-left: 5vw;
+}
+
+.main_info h4{
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.main_info h2{
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.flex_body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0vh 5vw 0vh 5vw;
+}
+
+.loremipsum{
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
+.column img{
+    width: 100%;
+}
+
+.right{
+    padding-left: .5vw;
+}
+
+.left{
+    padding-right: .5vw;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    padding:2vh 5vw 2vh 5vw;
+    
+}
+
+.about h4{
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.two_thirds{
+    flex-grow:2;
+}
+
+.two_thirds img{
+    width: 100%;
+}
+
+.one_third{
+    flex-grow:1;
+    
+}
+
+.issues{
+    padding: 0px 5vw 0px 5vw;
+}
+
+.issues h3{
+    padding-bottom: 5px;
+}
+ul{
+    text-decoration: none;
+    list-style-type: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color:rgb(27, 27, 27)
+}
+
+li a{
+    text-decoration: none;
+    color:rgb(48, 48, 48);
+}
+
+footer{
+    margin-top: 3vh;
+    background-color: rgb(48, 48, 48);
+    color: whitesmoke;
+    padding: 20px 5vw 20px 5vw;
+}
+
+footer ul{
+    display: flex;
+    justify-content: space-between;
+}
+footer li a{
+    color: whitesmoke;
+}

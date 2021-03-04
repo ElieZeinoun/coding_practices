@@ -2,8 +2,8 @@ html body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-
 }
+
 
 
 
@@ -101,7 +101,7 @@ figcaption{
 }
 .regular_list li a{
     color: rgb(56, 56, 73);
-    weight:800;
+    font-weight:800;
 }
 footer{
     background-color: rgb(245, 244, 244);
