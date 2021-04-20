@@ -1,0 +1,170 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+ul{
+
+}
+
+ul li{
+    list-style: none;
+    background: #eee;
+    padding:10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+ul li.active{
+    background: rgb(206, 206, 206);
+    font-weight: 600;
+}
+
+ul li:hover{
+    background: rgb(185, 185, 185);
+    
+}
+
+body{
+    overflow: hidden;
+}
+
+.navbar{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar h1{
+    font-family: 'Halant', serif;
+    letter-spacing: 7px;
+    font-weight: 500;
+    font-size: 48px;
+    color: rgb(65, 65, 65);
+}
+
+.wrapper{
+    display: grid;
+    width:100vw;
+    height: 100vh;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(8,1fr);
+    gap: 10px;
+}
+
+header{
+    /* background-color: rgb(158, 158, 158); */
+    grid-area: 1 / 1 / 2 / last-line;
+}
+
+aside.left{
+    grid-area: 2 / 1 / last-line / 3;
+
+}
+
+aside.right{
+
+    grid-area: 2 / 11 / last-line / last-line;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(8,1fr);
+}
+
+
+
+.cart_body{
+    grid-area: 1 / 1 / 7 / 3;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(6,1fr);
+    gap: 5px;
+}
+
+.cart{
+    position: relative;
+    background-color: rgb(236, 236, 236);
+    opacity: 1;
+}
+
+.cart:hover{
+    background-color: rgb(109, 108, 108);
+    opacity: .7;
+
+}
+
+ 
+ .cart>.imgjs{
+     position: absolute;
+     object-fit: cover;
+     overflow: hidden;
+     width: 100%;
+ }
+
+
+
+.main{
+    display: grid;
+    grid-area: 2 / 3 / last-line / 11;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(4,1fr);
+    gap:10px;
+}
+
+
+/* Add Border on hover */
+.main>div{
+    /* border: 1px solid rgb(122, 122, 122); */
+}
+
+
+.main>div{
+    position: relative;
+}
+.imgjs{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.imgjs:hover{
+    opacity: .7;
+    cursor: move;
+}
+
+/* Responsive for mobile */
+@media screen and (max-width:600px){
+    .wrapper{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(6,1fr);
+        gap: 10px;
+    }
+
+    header{
+        grid-area: 1 / 1 / 2 / last-line;
+    }
+    
+    /* Moves under the header */
+    aside.left{
+        grid-area: 2 / 1 / 3 / last-line;
+    }
+    
+    aside.right{
+        grid-area: 3 / 4 / last-line / last-line;
+    }
+    
+    section.main{
+        grid-area: 3 / 1 / last-line / 4;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4,1fr);
+        gap:10px;
+    }
+
+
+
+}
