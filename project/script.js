@@ -4,7 +4,7 @@ let materials= [
  { 
     name:"concrete",
     id: 1,
-    application: ["wall", "floor"],
+    application: ["all", "walls", "floors"],
     carbon: 550,
     cost: 45,
     image: "assets/carpet-1.jpg",
@@ -12,7 +12,7 @@ let materials= [
  {  
     name:"wood",
     id: 2,
-    application: "wall",
+    application: ["all", "walls"],
     carbon: 750,
     cost: 20,
     image: "assets/carpet-2.jpg",
@@ -20,7 +20,7 @@ let materials= [
  {  
     name:"ceramic",
     id: 3,
-    application: ["wall", "floor", "furniture"],
+    application: ["all", "walls", "floors", "furniture"],
     carbon: 750,
     cost: 20,
     image: "assets/wood-1.jpg",
@@ -28,7 +28,7 @@ let materials= [
  {  
     name:"wood",
     id: 4,
-    application: "wall",
+    application: ["all", "walls", "floors"],
     carbon: 750,
     cost: 20,
     image: "assets/wood-2.jpg",
@@ -36,7 +36,7 @@ let materials= [
  {  
    name:"wood",
    id: 5,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/wood-3.jpg",
@@ -44,7 +44,7 @@ let materials= [
 {  
    name:"wood",
    id: 6,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/ceramic-1.jpg",
@@ -52,7 +52,7 @@ let materials= [
 {  
    name:"wood",
    id: 7,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/leather-1.jpg",
@@ -60,7 +60,7 @@ let materials= [
 {  
    name:"wood",
    id: 8,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/ceramic-2.jpg",
@@ -68,7 +68,7 @@ let materials= [
 {  
    name:"wood",
    id: 9,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/cotton-1.jpg",
@@ -76,7 +76,7 @@ let materials= [
 {  
    name:"wood",
    id: 10,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/mdf-1.jpg",
@@ -84,7 +84,7 @@ let materials= [
 {  
    name:"wood",
    id: 11,
-   application: "fabric",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/fabric-1.jpg",
@@ -92,7 +92,7 @@ let materials= [
 {  
    name:"wood",
    id: 12,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/marble-1.jpg",
@@ -100,7 +100,7 @@ let materials= [
 {  
    name:"wood",
    id: 13,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 20,
    image: "assets/glass.jpg",
@@ -108,7 +108,7 @@ let materials= [
 {  
    name:"wood",
    id: 14,
-   application: "wall",
+   application: ["all", "walls", "misc"],
    carbon: 750,
    cost: 20,
    image: "assets/pvc-1.jpg",
@@ -116,7 +116,7 @@ let materials= [
 {  
    name:"wood",
    id: 15,
-   application: "wall",
+   application: ["all", "misc",],
    carbon: 750,
    cost: 20,
    image: "assets/towel-1.jpg",
@@ -124,35 +124,14 @@ let materials= [
 {  
    name:"wood",
    id: 16,
-   application: "wall",
+   application: ["all", "walls", "floors"],
    carbon: 750,
    cost: 29,
    image: "assets/textile-1.jpg",
 },
-{  
-   name:"wood",
-   id: 17,
-   application: "wall",
-   carbon: 750,
-   cost: 20,
-   image: "assets/pvc-1.jpg",
-},
-{  
-   name:"wood",
-   id: 18,
-   application: "wall",
-   carbon: 750,
-   cost: 22,
-   image: "assets/glass.jpg",
-},
 ]
 
 
-
-
-
-
-console.log('dropped_array');
 
 let container = document.querySelector(".main");
 
@@ -166,12 +145,6 @@ function renderAllImages(data){
         renderImage.src = srcImage;
         divjs.appendChild(renderImage);
         container.appendChild(divjs);
-        console.log(renderImage);
-      //   if(material.id>16){
-      //      console.log(data.length)
-      //   }
-
- 
     });
 } 
 
@@ -220,22 +193,45 @@ $(document).ready(function(){
    )
    
    $('.list').click(function(){
+
+      //clears image gallery
+      container.innerHTML = "";
+
       const value = $(this).attr('data-filter');
-      console.log(value);
-      const application = materials.application;
-      if (value == 'all'){
-         $(materials).show('1000');
+      // console.log(value);
+
+      mat_list= [];
+      mat_value=[];
+      filtered = [];
+
+      for (let i=0; i < materials.length; i++){
+         mat_list = materials[i].application;
+
+
+         if (mat_list.includes(value)){
+            filtered.push(materials[i]);
+         }        
+
       }
-      else{
-         $(application).not(value).hide('1000');
-         $(application).filter(value).show('1000');
-      }
+
+      renderAllImages(filtered);
+      
+
+      // if (value == 'all'){
+      //    $(materials).show('1000');
+      // }
+      // else{
+      //    $(application).not(value).hide('1000');
+      //    $(application).filter(value).show('1000');
+      // }
    })
 
    $('.list').click(function(){
       $(this).addClass('active').siblings().removeClass('active');
    })
 })
+
+
 
 
 
