@@ -5,25 +5,30 @@
     font-family: 'Nunito Sans', sans-serif;
 }
 
+.wrapper{
+    padding: 0px 10px 10px 10px;
+}
 ul{
 
 }
 
 ul li{
     list-style: none;
-    background: #eee;
-    padding:10px;
+    background: rgb(250, 250, 250);
+    padding:7.75px;
     text-align: center;
     cursor: pointer;
+    border-radius: 10px;
+
 }
 
 ul li.active{
-    background: rgb(206, 206, 206);
+    background: rgb(235, 235, 235);
     font-weight: 600;
 }
 
 ul li:hover{
-    background: rgb(185, 185, 185);
+    background: rgb(218, 218, 218);
     
 }
 
@@ -39,11 +44,13 @@ body{
 }
 
 .navbar h1{
-    font-family: 'Halant', serif;
-    letter-spacing: 7px;
-    font-weight: 500;
-    font-size: 48px;
+    font-family: 'Nunito Sans', sans-serif;
+    letter-spacing: 16px;
+    font-weight: 300;
+    font-size: 31px;
     color: rgb(65, 65, 65);
+    text-transform: uppercase;
+    padding-top: 10px;
 }
 
 .wrapper{
@@ -62,35 +69,117 @@ header{
 
 aside.left{
     grid-area: 2 / 1 / last-line / 3;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(16,1fr);
+    gap: 10px;
 
 }
 
-aside.right{
 
+.filtering{
+    grid-area: 4/1/5/2;
+}
+
+h4{
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black  ;
+}
+
+.calculations{
+    padding-top: 10px;
+}
+
+.calculations > h4{
+    border-bottom: 0px;
+    border-top: 1px solid black ;
+    padding-top: 25px;
+}
+
+.filters{
+    grid-area: 5/1/7/2;
+}
+
+.sorting{
+    grid-area: 9/1/10/2;
+}
+
+.sorters{
+    grid-area: 10/1/13/2;
+}
+
+
+aside.right{
     grid-area: 2 / 11 / last-line / last-line;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: repeat(8,1fr);
 }
 
+.drop_div{
+    grid-area: 2/1/3/3;
+    position: relative;
+}
 
+.drop{
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+    padding-bottom: 20px;
+}
 
 .cart_body{
-    grid-area: 1 / 1 / 7 / 3;
+    grid-area: 3 / 1 / 7 / 3;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(6,1fr);
+    grid-template-rows: repeat(4,1fr);
     gap: 5px;
 }
 
+.calculations{
+    grid-area: 7/1/9/3;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.calculations > .cost{
+    grid-area: 1/1/2/2;
+}
+
+.calculations > .carbon{
+    grid-area: 1/2/2/3;
+}
+
+
+
+#price{
+    grid-area:2/1/3/2;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+#carbon{
+    grid-area:2/2/3/3;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+
+
 .cart{
     position: relative;
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(247, 247, 247);
     opacity: 1;
+    border-radius: 10px;
 }
 
 .cart:hover{
-    background-color: rgb(109, 108, 108);
+    background-color: rgb(180, 179, 179);
     opacity: .7;
 
 }
@@ -135,6 +224,31 @@ aside.right{
     opacity: .7;
     cursor: move;
 }
+
+
+@keyframes scale{
+    from{width:200%; height:200%;}
+    to{width:100%; height:100%;}
+}
+
+.incart{
+    animation-name: scale;
+    animation-duration: 0.5s;
+}
+
+.titles{
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.clickable{
+    letter-spacing: 3px;
+    font-weight: 300;
+}
+
+
+
 
 /* Responsive for mobile */
 @media screen and (max-width:600px){

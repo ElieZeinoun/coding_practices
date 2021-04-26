@@ -15,19 +15,28 @@
     <div class="wrapper">
         <header>
             <nav class="navbar">
-               <h1>Healthy . Building . Materials</h1> 
+               <h1>Healthy &nbsp; Building &nbsp; Materials</h1> 
             </nav>
         </header>
         <aside class="left">
-            <div class="filters">
+            <h4 class="titles filtering">FILTER</h4>
+            <div class="filters">                
                 <ul>
-                    <li class="list active" data-filter="all">All</li>
-                    <li class="list" data-filter="walls">Walls</li>
-                    <li class="list" data-filter="floors">Floors</li>
-                    <li class="list" data-filter="misc">Miscellaneous</li>
-                    <li class="list" data-filter="carbon">Carbon</li>
-                    <li class="list" data-filter="price">Price</li>
+                    <li class="list active clickable" data-filter="all">All</li>
+                    <li class="list clickable" data-filter="walls">Walls</li>
+                    <li class="list clickable" data-filter="floors">Floors</li>
+                    <li class="list clickable" data-filter="furn">Furniture</li>
                 </ul>
+            </div>
+            <h4 class="titles sorting">SORT</h4>
+            <div class="sorters">
+                <ul>
+                    <li class="sort clickable">Ascending</li>
+                    <li class="sort clickable">Descending</li>
+                    <li class="sort clickable">Cost</li>
+                    <li class="sort clickable">Carbon</li>
+                </ul>
+
             </div>
 
         </aside>
@@ -35,11 +44,10 @@
 
         </section>
         <aside class="right">
+            <div class="drop_div">
+                <h4 class="titles drop">DRAG & DROP</h4>
+            </div>
             <div class="cart_body">
-                <div class="cart"></div>
-                <div class="cart"></div>
-                <div class="cart"></div>
-                <div class="cart"></div>
                 <div class="cart"></div>
                 <div class="cart"></div>
                 <div class="cart"></div>
@@ -50,8 +58,10 @@
                 <div class="cart"></div>
             </div>
             <div class="calculations">
-                <div id="price">Cost</div>
-                <div>Carbon</div>
+                    <h4 class="titles calc cost">COST</h4>
+                    <div><p id="price"></p></div>
+                    <h4 class="titles calc carbon">CARBON</h4>
+                    <div><p id="carbon"></p></div>
             </div>
         </aside>
     </div>
