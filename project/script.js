@@ -161,7 +161,90 @@ function renderAllImages(data){
 $(document).ready(function(){
 
    renderAllImages(materials);
+
+   //----------------Show Name on Hover 
+   $(".imgjs").hover(function(){
+      // let matname = $(this).attr('class');
+      // console.log(matname)
+   })
+
+   //----------------Sort Ascending by name 
+
+   $('.ascending').click(function(){
    
+      container.innerHTML = "";
+      
+      function ascAllImages(data){
+         materials.sort(function(a,b){
+            if(a.name.toLowerCase() < b.name.toLowerCase()) {return -1;}
+            if(a.name.toLowerCase() > b.name.toLowerCase()) {return 1;}
+            return 0;
+         })
+
+         renderAllImages(materials);
+      }
+      
+      ascAllImages(materials);
+
+   })
+
+   //----------------Sort Descending by name
+
+   $('.descending').click(function(){
+   
+      container.innerHTML = "";
+      
+      function descAllImages(data){
+         materials.sort(function(a,b){
+            if(a.name.toLowerCase() < b.name.toLowerCase()) {return 1;}
+            if(a.name.toLowerCase() > b.name.toLowerCase()) {return -1;}
+            return 0;
+         })
+
+         renderAllImages(materials);
+      }
+      
+      descAllImages(materials);
+
+   })
+
+      //----------------Sort by Cost
+      $('.cost').click(function(){
+   
+         container.innerHTML = "";
+         
+         function costAllImages(data){
+            materials.sort(function(a,b){
+               return a.cost - b.cost;
+
+            })
+               
+            renderAllImages(materials);
+         }
+         
+         costAllImages(materials);
+   
+      })
+
+      //----------------Sort by Carbon
+      $('.carbon').click(function(){
+   
+         container.innerHTML = "";
+         
+         function carbonAllImages(data){
+            materials.sort(function(a,b){
+               return a.carbon - b.carbon;
+
+            })
+               
+            renderAllImages(materials);
+         }
+         
+         carbonAllImages(materials);
+   
+      })
+
+   // --------------- Filter Function  
    $('.list').click(function(){
 
       //clears image gallery
@@ -186,7 +269,7 @@ $(document).ready(function(){
 
       renderAllImages(filtered);
       
-
+      
       $(".imgjs").draggable(
          {
             helper:'clone',
@@ -208,16 +291,20 @@ $(document).ready(function(){
                var droppedItem = $(ui.draggable).clone();
                var div_child_count = $(ev.target).children().length;
                var div_count = $(ev.target).length;
+               // var droppedItems =[];
 
                //Check if existing element has already been dropped
                if(div_child_count <div_count){
                   $(this).append(droppedItem);
                   $(droppedItem).addClass("incart");
                   $(droppedItem).addClass("price");
+                  // droppedItems.push(droppedItem);
+                  // console.log(droppedItems);
                   // console.log(ev.target.children)
                   
                   cart_items =[];
                   let totalvalues =[];
+                  let totalcarbon = [];
 
                         function calculator(numbers){
 
@@ -226,35 +313,45 @@ $(document).ready(function(){
                            numbers.forEach(function(element){
                               if(element.id == drop_id){
                                  cart_items.push(element);
+                                 
 
                                  let value = element.cost;
+                                 let c_value = element.carbon;
                                  // console.log(value);
                                  // let cost = document.createElement("p");
                                  // let printcost = document.createTextNode(value);
                                  // let costinp = cost.appendChild(printcost);
                                  // costcontainer.appendChild(cost);
-                                 totalvalues.push(value);
-                                 console.log(totalvalues);
-                                 
 
+                                 
+                                 totalvalues.push(value);
+                                 // console.log(totalvalues);
+                                 
+                                 totalcarbon.push(c_value);
+                                 console.log(totalcarbon);
                               }
-                              
+                             
                            });
 
                            let costtotal = document.querySelectorAll('.price')
                            costtotal.forEach(function(e){
-                              console.log(e);
+                              // console.log(e);
                            })
                            // console.log(costtotal);
                            
                            const sum = totalvalues.reduce((accumulator, currentValue) => accumulator + currentValue);
-                           console.log(sum);
+                           // console.log(sum);
                      
                            let cost = document.querySelector("#price");
                            // cost.classList.add('price');
                            let printcost = document.createTextNode(sum);
-                           let costinp = cost.appendChild(printcost);
-                           // costcontainer.appendChild(cost);
+                           cost.innerHTML = sum;
+
+                           const carbon_value = totalcarbon.reduce((accumulator, currentValue) => accumulator + currentValue);
+
+                           let carbon = document.querySelector('#carbon');
+                           let carbonvalue = document.createTextNode(carbon_value);
+                           carbon.innerHTML = carbon_value;
                      }
                      
                      calculator(materials);
@@ -270,6 +367,7 @@ $(document).ready(function(){
          }
       )
    
+      
 
 
 //Empty Cart from Item when double clicked
